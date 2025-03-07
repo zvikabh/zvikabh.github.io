@@ -32,6 +32,12 @@ jobs:
       - name: Build with Next.js 🏗️
         run: npx next build
 
+      - name: Show files
+        run: ls -l
+
+      - name: Show files in out dir
+        run: ls -l ./out
+
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:

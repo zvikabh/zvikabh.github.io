@@ -1,10 +1,13 @@
 {
   "name": "react.dev",
   "version": "0.0.0",
+  "homepage": "https://zvikabh.github.io",
   "main": "/src/index.js",
   "scripts": {
     "start": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite"
   },
   "dependencies": {

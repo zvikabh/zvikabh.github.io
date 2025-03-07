@@ -71,7 +71,7 @@ jobs:
         run: ls -la
 
       - name: Show files in out dir
-        run: ls -la ./.next
+        run: ls -la ./out
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3

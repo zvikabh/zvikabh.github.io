@@ -1,0 +1,39 @@
+.title {
+  font-size: 34px;
+  padding-top: 15px;
+}
+.subtitle {
+  font-size: 28px;
+}
+.title, .subtitle {
+  margin: 12px 0;
+  line-height: initial;
+  font-family: 'Fredericka the Great', cursive;
+}
+.list_noimage {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  padding: 10px 0;
+}
+.authors {
+  opacity: 60%;
+  font-size: 15px;
+}
+.paper_title {
+  font-size: 16px;
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #11b0ff;
+  }
+}
+.bibinfo {
+  opacity: 60%;
+  font-size: 15px;
+  a {
+    text-decoration: none;
+    color: #008cff;
+    opacity: 100%;
+  }
+}

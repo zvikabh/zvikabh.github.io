@@ -9,7 +9,7 @@ import '../../globals.scss';
 export default function Header({ isNavbarVisible, setIsNavbarVisible }) {
   const titleRef = useRef(null);
   useEffect(() => {
-    titleRef.current.textContent = document.title;
+    titleRef.current.textContent = document.title.replace(' — Zvika Ben-Haim', '');
   }, []);
   return (
     <div className={styles.header_root}>

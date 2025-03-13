@@ -8,8 +8,8 @@ export default function Home() {
       <p>Welcome to my homepage!</p>
       <p>Stuff you can find here includes:</p>
       <ul>
-        <li><a href="publications">My publications</a></li>
-        <li><a href="software">Fun software projects</a></li>
+        <li><a href="/publications">My publications</a></li>
+        <li><a href="/software">Fun software projects</a></li>
       </ul>
     </>
   );

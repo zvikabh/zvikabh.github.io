@@ -1,0 +1,58 @@
+@use '../../globals';
+
+.header_wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header_spacer {
+  /* non-fixed div which has the same height as the fixed header */
+  height: globals.$header-height;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #673ab7;
+  color: #fff;
+  padding: 0 30px;
+  height: globals.$header-height;
+}
+
+.header_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+
+  .hamburger_icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .title {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: .02em;
+    font-weight: 400;
+  }  
+}
+
+.header_right {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+
+  a {
+    text-decoration: none;
+    opacity: 70%;
+    color: #fff;
+  }
+
+  a:hover {
+    opacity: 100%;
+  }
+}

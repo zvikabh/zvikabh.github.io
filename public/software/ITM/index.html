@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html><head>
+<link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css">
+<link href="itm.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="proj4.js"></script>
+<script src="itm.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="ITM, Israel Transverse Mercator">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Converting latitude and longitude to/from Israel Transverse Mercator (ITM) coordinates</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R83Z59BP68"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R83Z59BP68');
+</script>
+</head>
+<body onload="onload();">
+<h1>Converting latitude and longitude to/from Israel Transverse Mercator (ITM) coordinates</h1>
+
+<p style="font-family: sans-serif; direction: rtl;"><a href="index_heb.html">קראו עמוד זה בעברית</a></p>
+
+<p>The standard coordinate grid in Israel is called Israel Transverse 
+Mercator (ITM), and is sometimes informally referred to as the "new 
+Israel grid" (רשת ישראל חדשה). This grid appears in detailed maps of 
+Israel. Nonetheless, the older and less accurate Israel Cassini Soldner 
+(ICS) grid or "old Israel grid" (רשת ישראל ישנה) is also still used in 
+many places. For example, despite the official adoption of ITM in 1994, 
+the ICS grid is still displayed more prominently in Israeli hiking maps 
+(מפות סימון שבילים) and is consequently more commonly used by hikers.</p>
+
+<p>The ITM grid is a transverse Mercator projection, meaning that the 
+surface of the earth is projected onto a cylinder whose axis of symmetry
+is parallel to the equator. This provides an accurate projection along a
+longitudinal slice of the earth, with the inaccuracy increasing as one 
+moves away from this axis. Thus, for example, the Universal Transverse 
+Mercator (UTM) grid divides the earth into 60 longitudinal slices, each 
+projected separately. Since Israel is a narrow country, whose span from 
+east to west barely exceeds 100 kilometers, a single projection is 
+sufficient for accurately representing the entire area.</p>
+
+
+<div id="columns">
+
+<div>
+<h2>Conversion from lat-long to ITM</h2>
+
+<form action="javascript:;">
+<table border="0">
+<tr>
+  <td>Latitude:</td>
+  <td colspan="2"><input type="text" name="lat" id="lat" size="12" value="32.7461" /> ° North</td>
+</tr>
+<tr>
+  <td>Longitude:</td>
+  <td colspan="2"><input type="text" name="long" id="long" size="12" value="35.0258" /> ° East</td>
+</tr>
+<tr>
+  <td colspan="3"><input type="submit" value="Convert" onclick="computeLatLngToITM();" /></td>
+</tr>
+<tr>
+  <td>ITM:</td>
+  <td class="number"><span id="itm_east"></span> - <span id="itm_north"></span></td>
+</tr>
+<tr>
+  <td>Old Grid:</td>
+  <td class="number"><span id="oldgrid_east"></span> - <span id="oldgrid_north"></span></td>
+</tr>
+</table>
+</form>
+
+<h2>Conversion from ITM to lat-long</h2>
+
+<form action="javascript:;">
+<table border="0">
+<tr>
+  <td>ITM East:</td>
+  <td colspan="2"><input type="text" name="itm_east_src" size="9" id="itm_east_src" value="202679" /> meters</td>
+</tr>
+<tr>
+  <td>ITM North:</td>
+  <td colspan="2"><input type="text" name="itm_north_src" size="9" id="itm_north_src" value="738786" /> meters</td>
+</tr>
+<tr>
+  <td colspan="3"><input type="submit" value="Convert" onclick="computeITMToLatLng();" /></td>
+</tr>
+<tr>
+  <td>Latitude:</td>
+  <td class="number"><span id="lat_dest"></span> ° North</td>
+</tr>
+<tr>
+  <td>Longitude:</td>
+  <td class="number"><span id="lng_dest"></span> ° East</span></td>
+</tr>
+</table>
+</form>
+
+</div>
+
+<div>
+<iframe id="osm-iframe"></iframe>
+<br/>
+</div>
+</div>
+
+<h2>Some notes on the ICS grid</h2>
+<ul>
+<li>The ICS grid is not very accurate, and the above conversion into ICS is
+less accurate still. The results you see here might be off by as much as 200
+meters.
+<li>By convention, when the ICS northing exceeds a value of 1,000,000, the
+leading 1 is dropped. Thus, for example, the northing for the Western Wall in
+Jerusalem is 1131586, but this is usually written in maps as 131586. We follow
+the same convention here.
+</ul>
+
+<h2>Acknowledgements</h2>
+The code in this page is based on the Proj4.js library whose source code is
+available
+<a target="_blank" href="https://github.com/proj4js/proj4js">here</a>.
+Proj4.js is distributed under <a href="proj4js_license.html">this license</a>.
+
+<h2>Alternative ITM conversion programs</h2>
+
+Several people have written versions of ITM-to-WGS84 conversion code in other
+languages, and have graciously allowed me to host their code on my site.
+These are:
+
+<ul>
+<li><a href="isr84lib.cpp">C++ conversion library between ITM and WGS84</a>,
+written by Joseph Gray.</li>
+
+<li><a href="isr84lib.cs">C# version of the ITM-to-WGS84 conversion
+library</a>, written by Michael Siton.</li>
+
+<li>SQL functions converting <a href="isr84lib.sql">WGS84 to ITM</a> and
+<a href="itm2grid.sql">ITM to WGS84</a>, written by Gili Ben-Zvi.</li>
+</ul>
+
+<p><i><a href="/software/software.html">Back</a> to Zvika's software page</i></p>
+
+</body></html>

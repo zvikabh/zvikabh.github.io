@@ -1,0 +1,44 @@
+h1,h2 {color: green; font-weight: normal;}
+h1 {font-size: 24pt;}
+h2 {font-size: 16pt;}
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
+body {
+  background-color: #ccebd4;
+  font-family: 'Linden Hill', serif;
+  margin: 20px auto;
+  padding: 0px 20px;
+  max-width: 800px;
+}
+td.number {
+  font-family: 'Times New Roman', serif;
+}
+.hebrew td.number {
+  font-family: 'Rubik', sans-serif;
+  direction: ltr;
+  text-align: right;
+}
+#osm-iframe {
+  height: 350px;
+  width: 400px;
+  max-width: 100%;
+  border: 1px solid black
+}
+#columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+}
+.hebrew {
+  direction: rtl;
+}
+.hebrew body {
+  font-family: 'Rubik', sans-serif;
+}
+.hebrew h1 {
+  font-family: 'Rubik Dirt', serif;
+  font-size: 24pt;
+}

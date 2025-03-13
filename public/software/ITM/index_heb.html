@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html class="hebrew">
+<head>
+  <link href="itm.css" rel="stylesheet" type="text/css">
+  <script type="application/javascript" src="proj4.js"></script>
+  <script src="itm.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="ITM, Israel Transverse Mercator">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Rubik+Dirt&display=swap" rel="stylesheet">
+  <title>המרת קואורדינטות מנ.צ. לקווי אורך ורוחב</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R83Z59BP68"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R83Z59BP68');
+  </script>
+</head>
+<body onload="onload();">
+<h1>המרת קואורדינטות מרשת ישראל (נ.צ.) לקווי אורך ורוחב</h1>
+
+<p style="direction: ltr;"><a href="index.html">Read this page in English</a></p>
+
+<p>רשת הקואורדינטות הסטנדרטית בישראל נקראת רשת ישראל החדשה ומבוססת על
+היטל מרקטור ניצב (transverse Mercator). הרשת מופיעה בסימוני מפות מפורטים
+של ישראל, כגון מפות סימון שבילים. יחד איתה מופיעה לעיתים גם "רשת ישראל 
+הישנה", המבוססת על היטל קסיני-סולדנר (Cassini-Soldner).</p>
+
+<p>בהיטל מרקטור ניצב, כדור הארץ מוטל על גליל שציר הסימטריה שלו מקביל
+לקו המשווה. היטל זה מקנה דיוק גבוה לאורך פרוסה אורכית של כדור הארץ,
+ומידת הדיוק פוחתת ככל שמתרחקים ממרכז הפרוסה. היטל זה משמש גם עבור
+רשת UTM, בה מחולק כדור הארץ ל-60 פרוסות אורכיות, ומוגדר היטל נפרד לכל
+פרוסה. מכיוון שישראל היא מדינה צרה, שרוחבה ממזרח למערב הוא כ-100 קילומטר,
+היטל אחד מספיק כדי לייצג את המדינה כולה. היטל זה נקרא רשת ישראל החדשה
+או Israel Transverse Mercator (ITM).</p>
+
+<div id="columns">
+
+  <div>
+    <h2>המרה מקו אורך וקו רוחב לרשת ישראל</h2>
+    <form action="javascript:;">
+      <table border="0">
+      <tr>
+        <td>קו רוחב:</td>
+        <td><input type="text" name="lat" id="lat" size="12" value="32.7461" /> ° צפון</td>
+      </tr>
+      <tr>
+        <td>קו אורך:</td>
+        <td><input type="text" name="long" id="long" size="12" value="35.0258" /> ° מזרח</td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="המרה" onclick="computeLatLngToITM();" /></td>
+      </tr>
+      </table>
+      <table>
+      <tr>
+        <td>רשת ישראל החדשה:</td>
+        <td class="number"><span id="itm_east"></span> - <span id="itm_north"></span></td>
+      </tr>
+      <tr>
+        <td>רשת ישראל הישנה:</td>
+        <td class="number"><span id="oldgrid_east"></span> - <span id="oldgrid_north"></span></td>
+      </tr>
+      </table>
+    </form>
+
+    <h2>המרה מרשת ישראל לקו אורך וקו רוחב</h2>
+    <form action="javascript:;">
+      <table border="0">
+      <tr>
+        <td>רשת ישראל החדשה - מזרח:</td>
+        <td><input type="text" name="itm_east_src" size="8" id="itm_east_src" value="202679" /> מטר</td>
+      </tr>
+      <tr>
+        <td>רשת ישראל החדשה - צפון:</td>
+        <td><input type="text" name="itm_north_src" size="8" id="itm_north_src" value="738786" /> מטר</td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="המרה" onclick="computeITMToLatLng();" /></td>
+      </tr>
+      </table>
+      <table>
+      <tr>
+        <td>קו רוחב:</td>
+        <td><span dir="ltr"><span id="lat_dest"></span> °</span> צפון</td>
+      </tr>
+      <tr>
+        <td>קו אורך:</td>
+        <td><span dir="ltr"><span id="lng_dest"></span> °</span> מזרח</span></td>
+      </tr>
+      </table>
+    </form>
+  </div>
+
+  <div>
+    <iframe id="osm-iframe"></iframe>
+    <br/>
+  </div>
+</div>
+
+<h2>כמה הערות על רשת ישראל הישנה</h2>
+<ul>
+  <li>
+    רשת ישראל הישנה (היטל קסיני-סולדנר) אינה מאוד מדויקת מלכתחילה,
+    וחישובי ההמרות לעיל מדויקים עוד פחות. נקודות הציון המוצגות לעיל
+    ברשת הישנה עשויות להכיל שגיאה של כ-200 מטר.
+  </li>
+  <li>
+    ברשת ישראל הישנה, כאשר הקואורדינטה השניה (הימנית) בנ.צ. (אשר מתייחסת
+    למרחק לכיוון צפון, או לקו הרוחב), עולה על 1,000,000, נהוג שלא לרשום
+    את הספרה 1 המובילה. כך, למשל, אם המרחק כלפי צפון מנקודת הייחוס אל
+    נקודת הציון הוא 1,131,586 מטרים, מקובל לרשום את הערך השני של
+    הנ.צ. כ-131586.
+  </li>
+</ul>
+
+<h2>תודות</h2>
+
+הקוד בעמוד זה משתמש בספריית Proj4.js, שקוד המקור שלה נמצא 
+<a target="_blank" href="https://github.com/proj4js/proj4js">כאן</a>.
+Proj4.js מאושרת לשימוש לפי 
+<a href="proj4js_license.html">רשיון זה</a>.
+
+<h2>תוכנות נוספות להמרה של קואורדינטות ברשת ישראל</h2>
+
+מספר אנשים כתבו גרסאות אחרות של קוד להמרה בין קואורדינטות ברשת ישראל לבין
+קווי אורך ורוחב, ונתנו את הסכמתם לאחסן באתר שלי את הקוד שלהם, על מנת שיהיה
+שימושי גם אחרים. אלה הם:
+
+<ul>
+  <li>
+    <a href="isr84lib.cpp">ספריית <span dir="ltr">C++</span> להמרה בין
+    רשת ישראל לקווי אורך ורוחב</a>, מאת ג'וזף גריי.
+  </li>
+  <li>
+    <a href="isr84lib.cs">ספריית <span dir="ltr">C#</span> להמרה בין
+    רשת ישראל לקווי אורך ורוחב</a>, מאת מיכאל סיטון.
+  </li>
+  <li>
+    פונקציות SQL להמרה <a href="isr84lib.sql">מקווי אורך ורוחב לרשת ישראל</a>
+    וכן <a href="itm2grid.sql">מרשת ישראל לקווי אורך ורוחב</a>,
+    מאת גילי בן-צבי.
+  </li>
+</ul>
+
+<p><small>חזרה ל<a href="/software/software.html">רשימת התוכנות של צביקה</a></small></p>
+</body>
+</html>

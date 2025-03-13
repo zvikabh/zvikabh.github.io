@@ -1,0 +1,314 @@
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R83Z59BP68"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R83Z59BP68');
+  </script>
+<style>
+.button {
+  color:white;
+  width:45px;
+  padding:10px 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background: -moz-linear-gradient(top, #ed9017 0%, #000 100%); /* firefox */
+  border: solid black 3px;
+  box-shadow: 0 1px 2px #fff, 0 -1px 1px #666, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.8);
+  -moz-box-shadow: 0 1px 2px #fff, 0 -1px 1px #666, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.8);
+  -webkit-box-shadow: 0 1px 2px #fff, 0 -1px 1px #666, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.8);
+  text-shadow: 0 1px 2px #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ed9017), color-stop(100%,#000)); 
+  font-family: sans-serif;
+  font-size:20px;
+  text-decoration:none;
+  text-align:center;
+}
+#ship {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  transition: all .8s;
+  -webkit-transition: all .8s;
+}
+td.wall {
+  background-color: #ddd;
+}
+td.cell {
+  background-color: #444;
+  background-clip: padding-box;
+}
+td.door,td.corner {
+  background-color: #444;
+}
+td.vert {
+  width: 5px;
+}
+td.horz {
+  height: 5px;
+}
+table#maze {
+  border-spacing:0px;
+  table-layout: fixed;
+  width:500px;
+  height:500px;
+  position:absolute;
+  left:30px;
+  top:30px;
+  z-index:0;
+}
+#targetName {
+  font-size: 35px;
+  text-align:center;
+  color:white;
+  font-family: sans-serif;
+  text-shadow: 0 5px 4px #08f;
+}
+</style>
+<script>
+kLevelData = {
+  0: { 'mazeSize':  6, 'image': '0-sun.jpg',     'name': 'שמש' },
+  1: { 'mazeSize':  8, 'image': '1-mercury.jpg', 'name': 'כוכב חמה' },
+  2: { 'mazeSize': 10, 'image': '2-venus.jpg',   'name': 'ונוס' },
+  3: { 'mazeSize': 11, 'image': '3-earth.jpg',   'name': 'כדור הארץ' },
+  4: { 'mazeSize': 12, 'image': '4-mars.jpg',    'name': 'מאדים' },
+  5: { 'mazeSize': 13, 'image': '5-asteroid.jpg','name': 'חגורת האסטרואידים' },
+  6: { 'mazeSize': 14, 'image': '6-jupiter.jpg', 'name': 'צדק' },
+  7: { 'mazeSize': 15, 'image': '7-saturn.jpg',  'name': 'שבתאי' },
+  8: { 'mazeSize': 17, 'image': '8-uranus.jpg',  'name': 'אורנוס' },
+  9: { 'mazeSize': 19, 'image': '9-neptune.jpg', 'name': 'נפטון' }
+};
+
+function shuffle(array) {
+  var counter = array.length, temp, index;
+
+  // While there are elements in the array
+  while (--counter > -1) {
+    // Pick a random index
+    index = ~~(Math.random() * counter);
+
+    // And swap the last element with it
+    temp = array[counter];
+    array[counter] = array[index];
+    array[index] = temp;
+  }
+
+  return array;
+}
+
+function createMaze() {
+  maze = new Array(kMazeSize);
+  var i,j;
+  for (i = 0; i < kMazeSize; i++) {
+    maze[i] = new Array(kMazeSize);
+	for (j = 0; j < kMazeSize; j++) {
+	  maze[i][j] = { 'visited': false, 'wallDown': true, 'wallRight': true };
+	}
+  }
+  var starting = [~~(Math.random() * (kMazeSize - 1)), ~~(Math.random() * kMazeSize)];
+  console.log(starting[0], starting[1]);
+  maze[starting[0], starting[1]].visited = true;
+  createMazeRecurse(starting[0], starting[1], 1, 0);
+  maze[kMazeSize-1][kMazeSize-1].wallDown = false;
+
+  // Create maze table
+  var table = $('maze');
+  var wallStyle = 'thick solid #ddd';
+  for (i = 0; i < kMazeSize; i++) {
+    var row = document.createElement('tr');
+    for (j = 0; j < kMazeSize; j++) {
+	  var cell = document.createElement('td');
+	  cell.className = 'cell';
+	  cell.id = 'cell_' + j + '_' + i;
+	  cell.xpos = j;
+	  cell.ypos = i;
+	  cell.ondragover = onDragOver;
+	  if (maze[j][i].wallDown)
+        cell.style.borderBottom = wallStyle;
+      if (maze[j][i].wallRight)
+        cell.style.borderRight = wallStyle;
+	  if (i == 0 && j > 0)
+	    cell.style.borderTop = wallStyle;
+	  if (j == 0)
+	    cell.style.borderLeft = wallStyle;
+	  row.appendChild(cell);
+	}
+	table.appendChild(row);
+  }
+}
+
+function createMazeRecurse(i, j, di, dj) {
+  if (i + di >= kMazeSize || i + di < 0 || j + dj >= kMazeSize || j + dj < 0) {
+    return;  // out of bounds
+  }
+  var new_i = i+di;
+  var new_j = j+dj;
+  if (maze[new_i][new_j].visited) {
+    return;  // already visited
+  }
+  // Remove wall
+  if (di == 1 && dj == 0) {
+    maze[i][j].wallRight = false;
+  } else if (di == -1 && dj == 0) {
+    maze[i-1][j].wallRight = false;
+  } else if (di == 0 && dj == 1) {
+    maze[i][j].wallDown = false;
+  } else if (di == 0 && dj == -1) {
+    maze[i][j-1].wallDown = false;
+  } else {
+    alert('invalid move');
+  }
+  // Mark as visited
+  maze[new_i][new_j].visited = true;
+  // Recurse
+  var array = [[1,0], [-1,0], [0,1], [0,-1]];
+  array = shuffle(array);
+  for (var x = 0; x < 4; x++) {
+    createMazeRecurse(new_i, new_j, array[x][0], array[x][1]);
+  }
+}
+
+function $(id) {
+  return document.getElementById(id);
+}
+
+function getPosById(id) {
+    var element = $(id);
+    var l = (element.offsetWidth * 0.025) + element.offsetLeft; 
+	var t = (element.offsetHeight * 0.025) + element.offsetTop;
+    while (element = element.offsetParent) {
+    	l += element.offsetLeft;
+		t += element.offsetTop;
+	}
+    return [l,t];
+}
+
+function updateShipPosition() {
+  var ship = $('ship');
+  var transformString = 'rotate(' + ship.angle + 'deg)';
+  ship.style.transform = transformString;
+  ship.style.webkitTransform = transformString;
+  ship.style.msTransform = transformString;
+  var cellId = 'cell_' + ship.xpos + '_' + ship.ypos;
+  var pos = getPosById(cellId);
+  ship.style.left = pos[0] + 'px';
+  ship.style.top = pos[1] + 'px';
+  if (ship.xpos == kMazeSize - 1 && ship.ypos == kMazeSize - 1) {
+    setTimeout(victory, 800);
+  }
+}
+
+function getLevel() {
+  var level = parseInt(window.location.search.substring(1));
+  if (isNaN(level) || level < 0 || level > 9)
+    level = 0;
+  return level;
+}
+
+function initialize() {
+  var level = getLevel();
+
+  kMazeSize = kLevelData[level]['mazeSize'];
+  $('target').src = kLevelData[level]['image'];
+  $('targetName').innerHTML = kLevelData[level]['name'];
+
+  createMaze();
+  var ship = $('ship');
+  var cellWidth = $('cell_0_0').offsetWidth;
+  var cellHeight = $('cell_0_0').offsetHeight;
+  ship.angle = 0;
+  ship.xpos = 0;
+  ship.ypos = 0;
+  ship.width = cellWidth * 0.90
+  ship.height = cellHeight * 0.90
+  updateShipPosition();
+  
+  document.body.onkeydown = function(e) {
+    switch(e.keyCode) {
+	  case 37: advance(-1, 0); break;
+	  case 38: advance(0, -1); break;
+	  case 39: advance(1, 0);  break;
+	  case 40: advance(0, 1);  break;
+	}
+  };
+}
+
+function isLegalMove(oldx, oldy, newx, newy) {
+  if (newx < 0 || newx >= kMazeSize || newy < 0 || newy >= kMazeSize)
+    return false;
+  dx = newx - oldx;
+  dy = newy - oldy;
+  if (dx == 1 && dy == 0)
+    return !maze[oldx][oldy].wallRight;
+  if (dx == -1 && dy == 0)
+    return !maze[newx][newy].wallRight;
+  if (dx == 0 && dy == 1)
+    return !maze[oldx][oldy].wallDown;
+  if (dx == 0 && dy == -1)
+    return !maze[newx][newy].wallDown;
+  return false;
+}
+
+function advance(dx, dy) {
+  var ship = $('ship');
+  var new_xpos = ship.xpos + dx;
+  var new_ypos = ship.ypos + dy;
+  if (isLegalMove(ship.xpos, ship.ypos, new_xpos, new_ypos)) {
+    ship.xpos = new_xpos;
+	ship.ypos = new_ypos;
+	updateShipPosition();
+  } else {
+    // Invalid move; do nothing.
+  }
+}
+
+function onDragOver(ev) {
+  var ship = $('ship');
+  var target = ev.target;
+  if (isLegalMove(ship.xpos, ship.ypos, target.xpos, target.ypos)) {
+    ev.preventDefault();
+	ship.xpos = target.xpos;
+	ship.ypos = target.ypos;
+	updateShipPosition();
+  }
+}
+
+function victory() {
+  var ship = $('ship');
+  var cellId = 'cell_' + ship.xpos + '_' + ship.ypos;
+  var pos = getPosById(cellId);
+  pos[0] += 100;
+  ship.style.top = pos[0] + 'px';
+  ship.style.left = pos[1] + 'px';
+  setTimeout(function() {
+    ship.style.left = 1500;
+	ship.width = 300;
+	ship.height = 300;
+	ship.style.transition = 'all 3s';
+	setTimeout(moveToNextLevel, 3000);
+	}, 
+  800);
+}
+
+function moveToNextLevel() {
+  var level = getLevel();
+  var newURL = window.location.protocol + '//' + window.location.host + '/' + window.location.pathname;
+  window.location = newURL + '?' + (level + 1);
+}
+</script>
+</head>
+<body bgcolor="black" onload="initialize()" onkeydown="keypress()">
+<table id="maze" />
+<div id="targetName" style="position:absolute; left:530px; top:350px; width:400px; height:50px;"></div>
+<img src="" id="target" style="position:absolute; left:530px; top:400px;" />
+<img src="yotam.jpg" id="ship" draggable="true" style="position:absolute; left:30px; top:30px; z-index:1;" />
+<a href="javascript:;" class="button" onclick="advance(-1, 0)" ondblclick=";" style="position:absolute; left:10px; top:600px;">שמאלה</a>
+<a href="javascript:;" class="button" onclick="advance(1, 0)" ondblclick=";" style="position:absolute; left:250px; top:600px;">ימינה</a>
+<a href="javascript:;" class="button" onclick="advance(0, -1)" ondblclick=";" style="position:absolute; left:130px; top:550px;">למעלה</a>
+<a href="javascript:;" class="button" onclick="advance(0, 1)" ondblclick=";" style="position:absolute; left:130px; top:650px;">למטה</a>
+</body>
+</html>

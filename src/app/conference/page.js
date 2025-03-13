@@ -55,14 +55,14 @@ const CONFERENCE_PUBLICATIONS = [
   {
     authors: 'A. Jung, Z. Ben-Haim, F. Hlawatsch, and Y. C. Eldar',
     title: 'On unbiased estimation of sparse vectors corrupted by Gaussian noise',
-    post_title: '(<a href="published/jbhe_poster.pdf">Poster</a>)',
+    post_title: (<>(<a href="published/jbhe_poster.pdf">Poster</a>)</>),
     bibinfo: (<><i>Proc. 2010 IEEE International Conference on Audio, Speech and Signal Processing</i> (ICASSP 2010), Dallas, TX, March 2010</>),
     link: 'published/jbhe_icassp.pdf'
   },
   {
     authors: 'Z. Ben-Haim and Y. C. Eldar',
     title: 'Performance bounds for sparse estimation with random noise',
-    post_title: '(<a href="published/crb-ssp.ppt">Presentation</a>)',
+    post_title: (<>(<a href="published/crb-ssp.ppt">Presentation</a>)</>),
     bibinfo: (<><i>IEEE Workshop on Statistical Signal Processing</i> (<a href="http://www.ssp2009.org/" target="_blank">SSP 2009</a>), Cardiff, Wales, UK, September 2009</>),
     link: 'published/crb-ssp.pdf'
   },
@@ -83,14 +83,14 @@ const CONFERENCE_PUBLICATIONS = [
   {
     authors: 'Z. Ben-Haim and Y. C. Eldar',
     title: 'Blind minimax estimators: Improving on least-squares estimation',
-    post_title: '(<a href="published/bme_imp_lse_poster.pdf" target="_top">Poster</a>)',
+    post_title: (<>(<a href="published/bme_imp_lse_poster.pdf" target="_top">Poster</a>)</>),
     bibinfo: (<><i>IEEE Workshop on Statistical Signal Processing</i> (SSP 2005), Bordeaux, France, July 2005</>),
     link: 'published/bme_imp_lse.pdf'
   },
   {
     authors: 'Z. Ben-Haim and Y. C. Eldar',
     title: 'Minimax estimators dominating the least-squares estimator',
-    post_title: '(<a href="published/mmx_dom_ls.ppt" target="_top">Presentation</a>)',
+    post_title: (<>(<a href="published/mmx_dom_ls.ppt" target="_top">Presentation</a>)</>),
     bibinfo: (<><i>30th International Conference on Audio, Speech and Signal Processing</i> 
         (ICASSP 2005), Philadelphia, PA, March 2005.<br />
         [Finalist, Student Paper Competition, ICASSP 2005]</>),

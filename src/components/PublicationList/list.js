@@ -14,7 +14,12 @@ export default function PublicationList({ title, publications }) {
                 pubInfo.link ? 
                 (<a href={pubInfo.link}>{pubInfo.title}</a>) : 
                 (<>{pubInfo.title}</>)
-              }.
+              }
+              {
+                pubInfo.post_title ?
+                (<>{pubInfo.post_title}.</>) :
+                (<>.</>)
+              }
             </div>
             <div className={styles.bibinfo}>{pubInfo.bibinfo}</div>
           </div>

@@ -9,8 +9,10 @@ export default function PublicationList({ publications }) {
         <React.Fragment key={i}>
           {
             hasImages ? 
-            <div className={styles.list_icon}><img src={pubInfo.icon} /></div> : 
-            null
+              <div className={styles.list_icon}>
+                {pubInfo.icon ? <img src={pubInfo.icon} /> : null}
+              </div> : 
+              null
           }
           <div>
             {

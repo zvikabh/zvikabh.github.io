@@ -12,6 +12,9 @@
 }
 .list_icon {
   justify-self: center;
+  img {
+    max-width: 64px;
+  }
 }
 .authors {
   color: #000000a0;

@@ -17,7 +17,7 @@ const USEFUL_SOFTWARE = [
   },
   {
     title: 'Converting latitude and longitude to the Israel grid',
-    link: '/software/ITM/',
+    link: '/software/ITM/index.html',
     icon: '/map.png',
     bibinfo: (<>This is a small JavaScript program for translating WGS84 coordinates (longitude and latitude)
 	to Israel grid coordinates. Both the new ITM grid (רשת ישראל החדשה) and the old ICS grid (רשת ישראל הישנה)
@@ -43,12 +43,12 @@ const USEFUL_SOFTWARE = [
   },
   {
     title: 'Guitar Tuner',
-    link: 'Tuner/Tuner.exe',
+    link: '/software/Tuner/Tuner.exe',
     icon: '/software/icons/guitar.jpg',
     bibinfo: (<>A program to tune your guitar. Connect
       a microphone and strum a single note on your guitar, and the program will
       tell you if you're sharp or flat. (Written as a birthday present for my
-      brother Rafi, who was learning to play.) Download <a target="_blank" href="Tuner/Tuner.exe">executable</a> or <a target="_blank" href="Tuner/source.zip">source</a> (MFC/Visual C++ 6). No
+      brother Rafi, who was learning to play.) Download <a target="_blank" href="/software/Tuner/Tuner.exe">executable</a> or <a target="_blank" href="/software/Tuner/source.zip">source</a> (MFC/Visual C++ 6). No
       documentation, but quite straightforward to use.</>)
   },
 ];
@@ -57,7 +57,7 @@ const GAMES = [
   {
     title: 'בול מילה',
     link: 'https://bulmila.com',
-    bibinfo: (<><span dir="rtl">גרסה עברית של המשחק וורדל.</span><br />Hebrew version of the <a href="https://www.powerlanguage.co.uk/wordle/">Wordle</a> word game.</>),
+    bibinfo: (<><span dir="rtl">גרסה עברית של המשחק וורדל.</span><br />Hebrew version of the <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a> word game.</>),
     icon: '/bulmila.jpg'
   },
   {
@@ -74,15 +74,15 @@ const GAMES = [
   },
   {
     title: 'Jigsaw Puzzle SVG Generator',
-    link: '/software/jigsaw-svg/',
+    link: '/software/jigsaw-svg/index.html',
     icon: '/software/jigsaw-svg/jigsaw.png',
-    bibinfo: 'Generates SVG files with random jigsaw puzzle pieces'
+    bibinfo: 'Generates SVG files with random jigsaw puzzle pieces.'
   },
   {
     title: 'Yotam\'s Space Maze',
-    link: '/yotam',
+    link: '/yotam/index.html',
     icon: '/yotam/yotam.jpg',
-    bibinfo: 'JavaScript maze game (written with my son)'
+    bibinfo: 'JavaScript maze game (written with my son).'
   },
   {
     title: 'MUSE: Musical Database Search by Audio Query',
@@ -91,7 +91,7 @@ const GAMES = [
     bibinfo: (<>This is a computer program for automatic song identification. The user hums
     a few notes from a song; these are analyzed and searched for in a database.
     This was the graduation project of my bachelor's degree at the Technion, and
-    was conducted under the supervision of Gal Ashour</>)
+    was conducted under the supervision of <a href="https://www.linkedin.com/in/gal-ashour-3a56731/">Gal Ashour</a>.</>)
   },
 ];
 
@@ -108,58 +108,42 @@ const GAME_SOLVERS = [
     title: 'Kakuro Solver',
     link: 'software/kakuro/kakuro.zip',
     icon: 'software/kakuro/kakuro.gif',
-    bibinfo: (<>A program for automatically solving 
-	<a target="_blank" href="http://en.wikipedia.org/wiki/Kakuro">Kakuro</a>
-      (also known as Cross Sum) puzzles. No documentation, but you'll figure it
-      out if you know the puzzle. Solves most large puzzles (22x13) in a few
-      seconds. Requires 
-	<a target="_blank" href="http://www.microsoft.com/downloads/details.aspx?FamilyID=0856eacb-4362-4b0d-8edd-aab15c5e04f5&displaylang=en">.NET
-      Framework 2.0</a>. Download <a target="_blank" href="kakuro/kakuro.zip">executable</a>
-      (with example) or <a target="_blank" href="https://github.com/zvikabh/kakuro-solver">source</a>
-      (<a target="_blank" href="http://msdn.microsoft.com/vstudio/express/visualcsharp/">Visual
-      C# 2005 Express</a>)</>)
+    bibinfo: (<>A program for automatically 
+    solving <a target="_blank" href="http://en.wikipedia.org/wiki/Kakuro">Kakuro</a> (also known as Cross Sum) puzzles. 
+    No documentation, but you'll figure it out if you know the puzzle. Solves most large puzzles (22x13) in a few 
+    seconds. Download <a target="_blank" href="/software/kakuro/kakuro.zip">executable</a> (with example) or view the <a target="_blank" href="https://github.com/zvikabh/kakuro-solver">source</a>.</>)
   },
   {
     title: 'Sudoku Solver',
     link: 'software/sudoku/software.zip',
     icon: 'software/sudoku/sudoku.gif',
-    bibinfo: (<>A program for automatically solving
-      <a target="_blank" href="http://en.wikipedia.org/wiki/Sudoku">Sudoku</a> (a.k.a. Number Place) puzzles. Just fill in the numbers you know
-      and leave the others blank, and the program will solve the puzzle for you
-      in under a second. Download the <a target="_blank" href="sudoku/software.zip">software</a>,
-      <a target="_blank" href="sudoku/puzzles.zip">sample puzzles</a>, and <a target="_blank" href="https://github.com/zvikabh/sudoku-solver">source</a>
-      (MFC/Visual C++ 6)</>)
+    bibinfo: (<>A program for automatically solving <a target="_blank" href="http://en.wikipedia.org/wiki/Sudoku">Sudoku</a> (a.k.a. Number Place) puzzles. Just fill in the numbers you know and leave the others blank, and the program will solve the puzzle for you in under a second. Download the <a target="_blank" href="/software/sudoku/software.zip">software</a>, <a target="_blank" href="/software/sudoku/puzzles.zip">sample puzzles</a>, and <a target="_blank" href="https://github.com/zvikabh/sudoku-solver">source</a> (MFC/Visual C++ 6).</>)
   },
   {
     title: 'Shchor',
     link: 'software/Shchor/shchor.zip',
     icon: 'software/Shchor/shchor.gif',
-    bibinfo: (<>This program solves the 
-	<a target="_top" href="http://en.wikipedia.org/wiki/Nonogram">Paint
+    bibinfo: (<>This program solves the <a target="_top" href="http://en.wikipedia.org/wiki/Nonogram">Paint
       by Numbers</a> (Pic-a-Pix) puzzle, in which the
       horizontal and vertical lengths of pixel sequences are given, and the
       object is to figure out the picture. No documentation, but if you know the
       puzzle, you'll figure it out; just drag one of the enclosed text files
       into the program and click Action&gt;Solve. (boat.txt is a good starting
-      example; carriage.txt is a difficult one.) Download the <a target="_blank" href="Shchor/shchor.zip"> software</a> (with
-      sample puzzles) or <a target="_blank" href="Shchor/source.zip"> source</a> (MFC/Visual C++ 6)</>)
+      example; carriage.txt is a difficult one.) Download the <a target="_blank" href="/software/Shchor/shchor.zip"> software</a> (with sample puzzles) or <a target="_blank" href="/software/Shchor/source.zip"> source</a> (MFC/Visual C++ 6).</>)
   },
   {
     title: 'Katamino Solver',
     link: 'https://github.com/zvikabh/katamino-solver',
     icon: '/katamino.png',
-    bibinfo: 'Python-based solver for the <a href="https://en.gigamic.com/game/katamino">Katamino</a> game'
+    bibinfo: (<>Python-based solver for the <a href="https://boardgamegeek.com/boardgame/6931/katamino">Katamino</a> game.</>)
   },
   {
     title: 'Tantrix Solver',
     link: 'https://github.com/zvikabh/tantrix',
     icon: 'software/tantrix/icon.png',
-    bibinfo: (<>A Python solver for
-               <a href="https://en.wikipedia.org/wiki/Tantrix">Tantrix</a>
-        puzzles. Runtime can be a bit slow for larger puzzles (more than about 15 
-        pieces); I'm sure this can be optimized further. Output is written as an
-        SVG file: see
-        <a href="tantrix/solution10.svg">example output</a></>)
+    bibinfo: (<>A Python solver for <a href="https://en.wikipedia.org/wiki/Tantrix">Tantrix</a> puzzles. Runtime can be a bit slow for larger puzzles (more than about 15 pieces); I'm sure this can be optimized further.
+    <details><summary>The output is written as an SVG file. Click to see an example solution.</summary><img src="/software/tantrix/solution10.svg" />
+  </details></>)
   },
 ];
 
@@ -171,9 +155,7 @@ const OLD_SOFTWARE = [
     bibinfo: (<>Alarm clock program. Choose to play a wave
       file or run an external program (e.g. Media Player) at a specified time.
       The cool feature is the ability to slowly increase the computer's volume,
-      so you don't wake up with a start. This was actually my alarm clock in the college dorm; this was, of course, before smartphones. Download the <a target="_blank" href="WakeUp/WakeUp.zip">executable</a>
-      (with help file) or the <a target="_blank" href="WakeUp/source.zip">source</a> (MFC/Visual
-      C++ 6)</>)
+      so you don't wake up with a start. This was actually my alarm clock in the college dorm; this was, of course, before smartphones. Download the <a target="_blank" href="/software/WakeUp/WakeUp.zip">executable</a> (with help file) or the <a target="_blank" href="/software/WakeUp/source.zip">source</a> (MFC/Visual C++ 6).</>)
   },
   {
     title: 'DrMatrix',
@@ -183,8 +165,8 @@ const OLD_SOFTWARE = [
       operations, such as matrix ranking, inversion, determinants, etc. However,
       this package probably does not house the most numerically stable
       algorithms, as it was written primarily as an exercise. Download the
-      package <a target="_blank" href="misc/drmatrix.zip">source code</a> (C++), with
-      documentation and demo program for solving linear equations</>)
+      package <a target="_blank" href="/software/misc/drmatrix.zip">source code</a> (C++), with
+      documentation and demo program for solving linear equations.</>)
   },
   {
     title: 'MidiMix',
@@ -192,8 +174,7 @@ const OLD_SOFTWARE = [
     icon: 'software/icons/MidiMix.jpg',
     bibinfo: (<>A program for converting MIDI files to the
       XM (Extended Module) music format. Before MP3s became popular, XM was used
-      for storing sound files in a higher quality than MIDI. Download <a target="_blank" href="MidiMix/MidiMix.zip">software</a>
-      (with documentation and examples) or <a target="_blank" href="MidiMix/source.zip">source</a> (C++)</>)
+      for storing sound files in a higher quality than MIDI. Download <a target="_blank" href="/software/MidiMix/MidiMix.zip">software</a> (with documentation and examples) or <a target="_blank" href="/software/MidiMix/source.zip">source</a> (C++).</>)
   },
   {
     title: '21 Questions',
@@ -204,8 +185,8 @@ const OLD_SOFTWARE = [
       thinking of. The program learns new concepts if its guesses fail. Concepts
       of different types can be programmed; for example, a sample question
       database which can identify over 100 types of animals is included.
-      Download <a target="_blank" href="21q/21q.zip">software</a> (with help and animals
-      database) or <a target="_blank" href="21q/source.zip">source</a></>)
+      Download <a target="_blank" href="/software/21q/21q.zip">software</a> (with help and animals
+      database) or <a target="_blank" href="/software/21q/source.zip">source</a>.</>)
   },
 ];
 

@@ -10,7 +10,7 @@ export default function PublicationList({ publications }) {
           {
             hasImages ? 
               <div className={styles.list_icon}>
-                {pubInfo.icon ? <img src={pubInfo.icon} /> : null}
+                {pubInfo.icon ? <img src={pubInfo.icon} alt="" /> : null}
               </div> : 
               null
           }

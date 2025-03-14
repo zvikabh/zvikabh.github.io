@@ -41,8 +41,8 @@ const JOURNAL_PAPERS = [
     title: 'The Cramér–Rao bound for estimating a sparse parameter vector',
     bibinfo: (<div><i>IEEE Trans. Signal Processing</i>, 58(6), 3384–3389, June 2010.<br/>
     A more detailed version of this paper is available as a technical report:
-		Z. Ben-Haim and Y. C. Eldar, "<a href="published/crb-techrep.pdf" target="_blank">The 
-		Cramér–Rao bound for sparse estimation</a>," Tech. Rep. 1714, 
+		Z. Ben-Haim and Y. C. Eldar, &quot;<a href="published/crb-techrep.pdf" target="_blank">The 
+		Cramér–Rao bound for sparse estimation</a>,&quot; Tech. Rep. 1714, 
 		Dept. of Electrical Engineering, Technion;
 		arXiv:<a href="http://arxiv.org/abs/0905.4378" target="_blank">0905.4378</a>.</div>),
     link: 'published/crb-corresp.pdf'

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./Navbar.module.scss";
 import "../../globals.scss";
 
@@ -9,12 +10,12 @@ export default function Navbar({ isVisibleOnMobile }) {
       <div className={styles.navbar_wrapper}>
         <div className={styles.navbar}>
           <div>
-            <a href="/">Home</a>
-            <a href="/publications">Publications</a>
-            <a href="/journal"><span className={styles.subnav}>Journal Pubs</span></a>
-            <a href="/conference"><span className={styles.subnav}>Conference Pubs</span></a>
-            <a href="/reports"><span className={styles.subnav}>Misc Reports</span></a>
-            <a href="/software">Software</a>
+            <Link href="/">Home</Link>
+            <Link href="/publications">Publications</Link>
+            <Link href="/journal"><span className={styles.subnav}>Journal Pubs</span></Link>
+            <Link href="/conference"><span className={styles.subnav}>Conference Pubs</span></Link>
+            <Link href="/reports"><span className={styles.subnav}>Misc Reports</span></Link>
+            <Link href="/software">Software</Link>
           </div>
         </div>
       </div>

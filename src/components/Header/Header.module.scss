@@ -1,4 +1,4 @@
-@use '../../globals';
+@use '../../consts';
 
 .header_wrapper {
   position: fixed;
@@ -9,7 +9,7 @@
 
 .header_spacer {
   /* non-fixed div which has the same height as the fixed header */
-  height: globals.$header-height;
+  height: consts.$header-height;
 }
 
 .header {
@@ -20,7 +20,7 @@
   background-color: #673ab7;
   color: #fff;
   padding: 0 30px;
-  height: globals.$header-height;
+  height: consts.$header-height;
 }
 
 .header_left {

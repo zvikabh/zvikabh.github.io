@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PublicationList from "../../components/PublicationList/list";
 import styles from "../page.module.scss";
 
@@ -47,7 +48,7 @@ const USEFUL_SOFTWARE = [
     icon: '/software/icons/guitar.jpg',
     bibinfo: (<>A program to tune your guitar. Connect
       a microphone and strum a single note on your guitar, and the program will
-      tell you if you're sharp or flat. (Written as a birthday present for my
+      tell you if you’re sharp or flat. (Written as a birthday present for my
       brother Rafi, who was learning to play.) Download <a target="_blank" href="/software/Tuner/Tuner.exe">executable</a> or <a target="_blank" href="/software/Tuner/source.zip">source</a> (MFC/Visual C++ 6). No
       documentation, but quite straightforward to use.</>)
   },
@@ -90,7 +91,7 @@ const GAMES = [
     icon: '/muse.gif',
     bibinfo: (<>This is a computer program for automatic song identification. The user hums
     a few notes from a song; these are analyzed and searched for in a database.
-    This was the graduation project of my bachelor's degree at the Technion, and
+    This was the graduation project of my bachelor’s degree at the Technion, and
     was conducted under the supervision of <a href="https://www.linkedin.com/in/gal-ashour-3a56731/">Gal Ashour</a>.</>)
   },
 ];
@@ -110,7 +111,7 @@ const GAME_SOLVERS = [
     icon: 'software/kakuro/kakuro.gif',
     bibinfo: (<>A program for automatically 
     solving <a target="_blank" href="http://en.wikipedia.org/wiki/Kakuro">Kakuro</a> (also known as Cross Sum) puzzles. 
-    No documentation, but you'll figure it out if you know the puzzle. Solves most large puzzles (22x13) in a few 
+    No documentation, but you’ll figure it out if you know the puzzle. Solves most large puzzles (22x13) in a few 
     seconds. Download <a target="_blank" href="/software/kakuro/kakuro.zip">executable</a> (with example) or view the <a target="_blank" href="https://github.com/zvikabh/kakuro-solver">source</a>.</>)
   },
   {
@@ -127,7 +128,7 @@ const GAME_SOLVERS = [
       by Numbers</a> (Pic-a-Pix) puzzle, in which the
       horizontal and vertical lengths of pixel sequences are given, and the
       object is to figure out the picture. No documentation, but if you know the
-      puzzle, you'll figure it out; just drag one of the enclosed text files
+      puzzle, you’ll figure it out; just drag one of the enclosed text files
       into the program and click Action&gt;Solve. (boat.txt is a good starting
       example; carriage.txt is a difficult one.) Download the <a target="_blank" href="/software/Shchor/shchor.zip"> software</a> (with sample puzzles) or <a target="_blank" href="/software/Shchor/source.zip"> source</a> (MFC/Visual C++ 6).</>)
   },
@@ -141,8 +142,8 @@ const GAME_SOLVERS = [
     title: 'Tantrix Solver',
     link: 'https://github.com/zvikabh/tantrix',
     icon: 'software/tantrix/icon.png',
-    bibinfo: (<>A Python solver for <a href="https://en.wikipedia.org/wiki/Tantrix">Tantrix</a> puzzles. Runtime can be a bit slow for larger puzzles (more than about 15 pieces); I'm sure this can be optimized further.
-    <details><summary>The output is written as an SVG file. Click to see an example solution.</summary><img src="/software/tantrix/solution10.svg" />
+    bibinfo: (<>A Python solver for <a href="https://en.wikipedia.org/wiki/Tantrix">Tantrix</a> puzzles. Runtime can be a bit slow for larger puzzles (more than about 15 pieces); I’m sure this can be optimized further.
+    <details><summary>The output is written as an SVG file. Click to see an example solution.</summary><Image src="/software/tantrix/solution10.svg" height={120*3} width={181*3} alt="Example solution" />
   </details></>)
   },
 ];
@@ -154,8 +155,8 @@ const OLD_SOFTWARE = [
     icon: 'software/icons/WakeUp.gif',
     bibinfo: (<>Alarm clock program. Choose to play a wave
       file or run an external program (e.g. Media Player) at a specified time.
-      The cool feature is the ability to slowly increase the computer's volume,
-      so you don't wake up with a start. This was actually my alarm clock in the college dorm; this was, of course, before smartphones. Download the <a target="_blank" href="/software/WakeUp/WakeUp.zip">executable</a> (with help file) or the <a target="_blank" href="/software/WakeUp/source.zip">source</a> (MFC/Visual C++ 6).</>)
+      The cool feature is the ability to slowly increase the computer’s volume,
+      so you don’t wake up with a start. This was actually my alarm clock in the college dorm; this was, of course, before smartphones. Download the <a target="_blank" href="/software/WakeUp/WakeUp.zip">executable</a> (with help file) or the <a target="_blank" href="/software/WakeUp/source.zip">source</a> (MFC/Visual C++ 6).</>)
   },
   {
     title: 'DrMatrix',
@@ -204,7 +205,7 @@ export default function Software() {
       <p className={styles.para}>
         <i>Note:</i> Some of these programs were previously released as shareware, and, in some cases, the documentation
         still indicates shareware status. However, I am no longer trying to sell these as shareware. Instead, the 
-        versions you see here are the complete ("registered") versions. On the other hand, I don't always have 
+        versions you see here are the complete (“registered”) versions. On the other hand, I don’t always have 
         time to answer technical support questions related to these programs.
       </p>
       <div className={styles.sublist_title}>Useful Stuff</div>
@@ -215,8 +216,8 @@ export default function Software() {
       <PublicationList publications={GAME_SOLVERS} />
       <div className={styles.sublist_title}>Very Old Stuff</div>
       <p className={styles.para}>
-        I've been writing software for a long time and many of these are both ridiculously archaic and 
-        embarrassingly incompetent. I'm keeping them here solely for nostalgic reasons.
+        I’ve been writing software for a long time and many of these are both ridiculously archaic and 
+        embarrassingly incompetent. I’m keeping them here solely for nostalgic reasons.
       </p>
       <PublicationList publications={OLD_SOFTWARE} />
     </>

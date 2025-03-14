@@ -15,7 +15,7 @@ const THESES = [
     {
       authors: null,
       title: 'Blind Minimax and Maximum Set Estimators: Improving on Least-Squares Estimation',
-      bibinfo: (<>Master's thesis, Technion—Israel Institute of Technology, January 2006, revised May 2006.<br />
+      bibinfo: (<>Master&apos;s thesis, Technion—Israel Institute of Technology, January 2006, revised May 2006.<br />
       For more information, see the <a href="https://webee.technion.ac.il/Sites/People/YoninaEldar/Info/software/bme/index.php">Blind Minimax Estimation site</a>.</>),
       link: 'published/mscthesis.pdf',
     },

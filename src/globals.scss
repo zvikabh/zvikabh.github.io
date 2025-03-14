@@ -1,6 +1,4 @@
-$header-height: 64px;
-$navbar-width: 190px;
-$narrow-screen-width: 900px;
+@use "./consts";
 
 html, body {
   margin: 0;
@@ -9,12 +7,12 @@ body {
   font-family: 'Merriweather', 'David Libre', serif;
 }
 .hide_on_wide_screens {
-  @media screen and (min-width: #{$narrow-screen-width + 1px}) {
+  @media screen and (min-width: #{consts.$narrow-screen-width + 1px}) {
       display: none;
   }
 }
 .hide_on_narrow_screens {
-  @media screen and (max-width: $narrow-screen-width) {
+  @media screen and (max-width: consts.$narrow-screen-width) {
     display: none;
   }
 }

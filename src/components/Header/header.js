@@ -1,5 +1,6 @@
 'use client';
 
+import Link from "next/link";
 import { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 
@@ -25,9 +26,9 @@ export default function Header({ isNavbarVisible, setIsNavbarVisible }) {
           </div>
           <div className="hide_on_narrow_screens">
             <div className={styles.header_right}>
-              <a href="/">Home</a>
-              <a href="/publications">Publications</a>
-              <a href="/software">Software</a>
+              <Link href="/">Home</Link>
+              <Link href="/publications">Publications</Link>
+              <Link href="/software">Software</Link>
             </div>
           </div>
         </div>

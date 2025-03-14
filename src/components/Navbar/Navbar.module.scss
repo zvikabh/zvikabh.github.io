@@ -1,8 +1,8 @@
-@use "../../globals";
+@use "../../consts";
 
 .navbar_wrapper {
   padding-top: 15px;
-  width: globals.$navbar-width;
+  width: consts.$navbar-width;
   position: fixed;
   overflow: auto;
   height: 100%;
@@ -36,5 +36,5 @@
 
 .navbar_spacer {
   /* non-fixed div which has the same height as the fixed header */
-  width: globals.$navbar-width;
+  width: consts.$navbar-width;
 }

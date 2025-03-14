@@ -70,7 +70,7 @@ const CONFERENCE_PUBLICATIONS = [
   {
     authors: 'A. Elron, G. Leibovitz, Z. Ben-Haim, and Y. C. Eldar',
     title: 'Recursive blind minimax estimation: Improving MSE over recursive least squares',
-    bibinfo: (<><i>25th IEEE Convention of Electrical and Electronics Engineers in Israel</i> (IEEEI'08), December 2008.<br />
+    bibinfo: (<><i>25th IEEE Convention of Electrical and Electronics Engineers in Israel</i> (IEEEI&apos;08), December 2008.<br />
         For more information, see the
         <a href="https://webee.technion.ac.il/Sites/People/YoninaEldar/Info/software/bme/index.php" target="_top">blind minimax estimation</a> site.</>),
     link: 'published/rebme.pdf'

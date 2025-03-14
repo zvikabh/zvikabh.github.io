@@ -1,23 +1,20 @@
-.title {
-  font-size: 34px;
-  padding-top: 15px;
-}
-.subtitle {
-  font-size: 28px;
-}
-.title, .subtitle {
-  margin: 12px 0;
-  line-height: initial;
-  font-family: 'Fredericka the Great', cursive;
-}
-.list_noimage {
+.list_noimage, .list_image {
   display: grid;
-  grid-template-columns: 1fr;
   row-gap: 20px;
   padding: 10px 0;
 }
+.list_noimage {
+  grid-template-columns: 1fr;
+}
+.list_image {
+  grid-template-columns: 1fr auto;
+  column-gap: 20px;
+}
+.list_icon {
+  justify-self: center;
+}
 .authors {
-  opacity: 60%;
+  color: #000000a0;
   font-size: 15px;
 }
 .paper_title {
@@ -29,11 +26,11 @@
   }
 }
 .bibinfo {
-  opacity: 60%;
   font-size: 15px;
+  color: #000000a0;
   a {
     text-decoration: none;
-    color: #008cff;
+    color: #11b0ff;
     opacity: 100%;
   }
 }

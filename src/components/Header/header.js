@@ -6,12 +6,15 @@ import clsx from 'clsx';
 
 import styles from './Header.module.scss';
 import '../../globals.scss';
+import { useTitle } from "../../contexts/TitleContext";
 
 export default function Header({ isNavbarVisible, setIsNavbarVisible }) {
+  const { shortTitle } = useTitle();
   const titleRef = useRef(null);
   useEffect(() => {
-    titleRef.current.textContent = document.title.replace(' — Zvika Ben-Haim', '');
-  }, []);
+    console.log(shortTitle);
+    titleRef.current.textContent = shortTitle;
+  }, [shortTitle]);
   return (
     <div className={styles.header_root}>
       <div className={styles.header_wrapper}>

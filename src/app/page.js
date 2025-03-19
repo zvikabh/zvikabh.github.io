@@ -1,8 +1,14 @@
-export const metadata = {
-  title: 'Zvika Ben-Haim — Homepage',
-};
+"use client";
+
+import { useEffect } from "react";
+import { useTitle } from "../contexts/TitleContext";
 
 export default function Home() {
+  const { setShortTitle } = useTitle();
+  useEffect(() => {
+    setShortTitle("Zvika Ben-Haim — Homepage");
+    document.title = "Zvika Ben-Haim — Homepage";
+  });
   return (
     <>
       <p>Welcome to my homepage!</p>

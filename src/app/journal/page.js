@@ -1,9 +1,10 @@
+"use client";
+
+import { useEffect } from "react";
+
+import { useTitle } from "../../contexts/TitleContext";
 import PublicationList from "../../components/PublicationList/list";
 import styles from "../page.module.scss";
-
-export const metadata = {
-  title: 'Journal Publications — Zvika Ben-Haim',
-};
 
 const JOURNAL_PAPERS = [
   {
@@ -95,6 +96,11 @@ const JOURNAL_PAPERS = [
 ];
 
 export default function JournalPublications() {
+  const { setShortTitle } = useTitle();
+  useEffect(() => {
+    setShortTitle("Journal Publications");
+    document.title = "Journal Publications — Zvika Ben-Haim";
+  });
   return (
     <>
       <div className={styles.title}>Journal Publications</div>

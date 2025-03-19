@@ -1,8 +1,15 @@
-export const metadata = {
-  title: 'Publications — Zvika Ben-Haim',
-};
+"use client";
+
+import { useEffect } from "react";
+
+import { useTitle } from "../../contexts/TitleContext";
 
 export default function Publications() {
+  const { setShortTitle } = useTitle();
+  useEffect(() => {
+    setShortTitle("Publications");
+    document.title = "Publications — Zvika Ben-Haim";
+  });
   return (
     <>
       <ul>

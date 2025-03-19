@@ -3,7 +3,7 @@ import Layout from "../components/Layout/layout";
 import '../globals.scss';
 
 export const metadata = {
-  description: "Zvika Ben-Haim - Homepage",
+  description: "Zvika Ben-Haim — Homepage",
   verification: {
     google: "google3072e7ff2f031730",
   },

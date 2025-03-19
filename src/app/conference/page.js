@@ -1,9 +1,10 @@
+"use client";
+
+import { useEffect } from "react";
+
+import { useTitle } from "../../contexts/TitleContext";
 import PublicationList from "../../components/PublicationList/list";
 import styles from "../page.module.scss";
-
-export const metadata = {
-  title: 'Conference Publications — Zvika Ben-Haim',
-};
 
 const CONFERENCE_PUBLICATIONS = [
   {
@@ -118,6 +119,11 @@ const CONFERENCE_PUBLICATIONS = [
 ];
 
 export default function ConferencePublications() {
+  const { setShortTitle } = useTitle();
+  useEffect(() => {
+    setShortTitle("Conference Publications");
+    document.title = "Conference Publications — Zvika Ben-Haim";
+  });
   return (
     <>
       <div className={styles.title}>Conference Publications</div>

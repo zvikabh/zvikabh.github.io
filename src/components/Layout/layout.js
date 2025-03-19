@@ -4,13 +4,14 @@ import { useState } from 'react';
 
 import Navbar from "../Navbar/navbar";
 import Header from "../Header/header";
+import TitleProvider from "../../contexts/TitleContext";
 import styles from "./layout.module.scss";
 
 export default function Layout({ children }) {
   const [isNavbarVisibleOnMobile, setIsNavbarVisibleOnMobile] = useState(false);
 
   return (
-    <>
+    <TitleProvider>
       <Header
           isNavbarVisible={isNavbarVisibleOnMobile} 
           setIsNavbarVisible={setIsNavbarVisibleOnMobile} />
@@ -20,6 +21,6 @@ export default function Layout({ children }) {
           {children}
         </div>
       </div>
-    </>
+    </TitleProvider>
   )
 }

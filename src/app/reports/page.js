@@ -1,9 +1,10 @@
+"use client";
+
+import { useEffect } from "react";
+
 import PublicationList from "../../components/PublicationList/list";
 import styles from "../page.module.scss";
-
-export const metadata = {
-  title: 'Misc Reports — Zvika Ben-Haim',
-};
+import { useTitle } from "../../contexts/TitleContext";
 
 const THESES = [
     {
@@ -92,6 +93,11 @@ const SHORT_SUMMARIES = [
 ];
 
 export default function MiscPublications() {
+  const { setShortTitle } = useTitle();
+  useEffect(() => {
+    setShortTitle("Misc Reports");
+    document.title = "Misc Reports — Zvika Ben-Haim";
+  });
   return (
     <>
       <div className={styles.title}>Miscellaneous Reports</div>

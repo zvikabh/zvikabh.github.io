@@ -1,10 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect } from "react";
+
 import PublicationList from "../../components/PublicationList/list";
 import styles from "../page.module.scss";
-
-export const metadata = {
-  title: 'Software — Zvika Ben-Haim',
-};
+import { useTitle } from "../../contexts/TitleContext";
 
 const USEFUL_SOFTWARE = [
   {
@@ -193,6 +194,11 @@ const OLD_SOFTWARE = [
 
 
 export default function Software() {
+  const { setShortTitle } = useTitle();
+  useEffect(() => {
+    setShortTitle("Software");
+    document.title = "Software — Zvika Ben-Haim";
+  });
   return (
     <>
       <div className={styles.title}>Software</div>

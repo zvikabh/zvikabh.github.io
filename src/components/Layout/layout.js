@@ -16,7 +16,9 @@ export default function Layout({ children }) {
           isNavbarVisible={isNavbarVisibleOnMobile} 
           setIsNavbarVisible={setIsNavbarVisibleOnMobile} />
       <div className={styles.main_wrapper}>
-        <Navbar isVisibleOnMobile={isNavbarVisibleOnMobile} />
+        <Navbar
+            isVisibleOnMobile={isNavbarVisibleOnMobile}
+            setIsNavbarVisible={setIsNavbarVisibleOnMobile} />
         <div className={styles.main_pane}>
           {children}
         </div>

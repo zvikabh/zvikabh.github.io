@@ -4,12 +4,17 @@ import Link from "next/link";
 import styles from "./Navbar.module.scss";
 import "../../globals.scss";
 
-export default function Navbar({ isVisibleOnMobile }) {
+export default function Navbar({ isVisibleOnMobile, setIsNavbarVisible }) {
+  const closeNavbarOnClick = (e) => {
+    if (e.target.tagName == 'A' || e.target.closest('a')) {
+      setIsNavbarVisible(false);
+    }
+  };
   return (
     <div className={isVisibleOnMobile ? "" : "hide_on_narrow_screens"}>
       <div className={styles.navbar_wrapper}>
         <div className={styles.navbar}>
-          <div>
+          <div onClick={closeNavbarOnClick}>
             <Link href="/">Home</Link>
             <Link href="/publications">Publications</Link>
             <Link href="/journal"><span className={styles.subnav}>Journal Pubs</span></Link>

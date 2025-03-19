@@ -12,7 +12,6 @@ export default function Header({ isNavbarVisible, setIsNavbarVisible }) {
   const { shortTitle } = useTitle();
   const titleRef = useRef(null);
   useEffect(() => {
-    console.log(shortTitle);
     titleRef.current.textContent = shortTitle;
   }, [shortTitle]);
   return (

@@ -14,6 +14,11 @@ const CONFERENCE_PUBLICATIONS = [
     link: null
   },
   {
+    authors: 'Y. Liu, P. Bates, J. C. Neal, A. Yonas, Z. Ben-Haim, V. Anisimov',
+    title: 'How well can we simulate flooding with the possible next generation of global scale DEM?',
+    bibinfo: (<><i>Global Flood Partnership Annual Meeting</i>, 2022</>)
+  },
+  {
     authors: 'N. Giladi, Z. Ben-Haim, S. Nevo, Y. Matias, and D. Soudry',
     title: 'Physics-aware downsampling with deep learning for scalable flood modeling',
     link: 'https://arxiv.org/abs/2106.07218',

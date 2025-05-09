@@ -8,6 +8,11 @@ import styles from "../page.module.scss";
 
 const JOURNAL_PAPERS = [
   {
+    authors: 'Y. Liu, P. Bates, J. Neal, L. Slater, J. Zhao, and Zvika Ben-Haim',
+    title: 'A Bare-earth GoogleDEM to simulate flooding in New Delhi, India',
+    bibinfo: (<>to appear in <i>Water Resources Research</i>, 2025.</>)
+  },
+  {
     authors: 'Nevo, S., Morin, E., Gerzi Rosenthal, A., Metzger, A., Barshai, C., Weitzner, D., Voloshin, D., Kratzert, F., Elidan, G., Dror, G., Begelman, G., Nearing, G., Shalev, G., Noga, H., Shavitt, I., Yuklea, L., Royz, M., Giladi, N., Peled Levi, N., Reich, O., Gilon, O., Maor, R., Timnat, S., Shechter, T., Anisimov, V., Gigi, Y., Levin, Y., Moshe, Z., Ben-Haim, Z., Hassidim, A., and Matias, Y.',
     title: 'Flood forecasting with machine learning models in an operational framework',
     bibinfo: (<div><i>Hydrology and Earth System Sciences</i> 26: 4013–4032, 2022.</div>),

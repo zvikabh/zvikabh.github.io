@@ -145,7 +145,7 @@ const GAME_SOLVERS = [
 
 const SILLY_STUFF = [
   {
-    title: (<>Pascal's triangle mod <i>k</i></>),
+    title: (<>Pascal&rsquo;s triangle mod <i>k</i></>),
     link: '/pascalmod',
     icon: '/pascal.png',
     bibinfo: (<>Web page showing the Pascal triangle modulo <i>k</i>, which, it turns out, is a generalization of the Sierpinski curve.</>)

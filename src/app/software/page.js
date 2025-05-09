@@ -81,12 +81,6 @@ const GAMES = [
     bibinfo: 'Generates SVG files with random jigsaw puzzle pieces.'
   },
   {
-    title: 'Yotam\'s Space Maze',
-    link: '/yotam/index.html',
-    icon: '/yotam/yotam.jpg',
-    bibinfo: 'JavaScript maze game (written with my son).'
-  },
-  {
     title: 'MUSE: Musical Database Search by Audio Query',
     link: '/unpublished/muse/index.html',
     icon: '/muse.gif',
@@ -146,6 +140,21 @@ const GAME_SOLVERS = [
     bibinfo: (<>A Python solver for <a href="https://en.wikipedia.org/wiki/Tantrix">Tantrix</a> puzzles. Runtime can be a bit slow for larger puzzles (more than about 15 pieces); I’m sure this can be optimized further.
     <details><summary>The output is written as an SVG file. Click to see an example solution.</summary><Image src="/software/tantrix/solution10.svg" height={120*3} width={181*3} alt="Example solution" />
   </details></>)
+  },
+];
+
+const SILLY_STUFF = [
+  {
+    title: (<>Pascal's triangle mod <i>k</i></>),
+    link: '/pascalmod',
+    icon: '/pascal.png',
+    bibinfo: (<>Web page showing the Pascal triangle modulo <i>k</i>, which, it turns out, is a generalization of the Sierpinski curve.</>)
+  },
+  {
+    title: 'Yotam\'s Space Maze',
+    link: '/yotam/index.html',
+    icon: '/yotam/yotam.jpg',
+    bibinfo: 'JavaScript maze game (written with my son).'
   },
 ];
 
@@ -220,6 +229,8 @@ export default function Software() {
       <PublicationList publications={GAMES} />
       <div className={styles.sublist_title}>Game Solvers</div>
       <PublicationList publications={GAME_SOLVERS} />
+      <div className={styles.sublist_title}>Silly Stuff</div>
+      <PublicationList publications={SILLY_STUFF} />
       <div className={styles.sublist_title}>Very Old Stuff</div>
       <p className={styles.para}>
         I’ve been writing software for a long time and many of these are both ridiculously archaic and 

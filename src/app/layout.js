@@ -5,7 +5,7 @@ import '../globals.scss';
 export const metadata = {
   description: "Zvika Ben-Haim — Homepage",
   verification: {
-    google: "google3072e7ff2f031730",
+    google: "WQqPpWkgrya11YCWISozg-xj9HFpXrsxVvbvUDDCmIg",
   },
 };
 export const viewport = {

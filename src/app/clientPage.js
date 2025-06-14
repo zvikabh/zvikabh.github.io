@@ -10,7 +10,7 @@ export default function ClientPage() {
   }, [setShortTitle]);
   return (
     <>
-      <p>Welcome to my homepage!</p>
+      <p>Welcome to Zvika's homepage!</p>
       <p>Stuff you can find here includes:</p>
       <ul>
         <li><a href="/publications">My publications</a></li>

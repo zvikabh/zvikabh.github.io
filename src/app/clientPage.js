@@ -1,7 +1,9 @@
 "use client";
 
+
 import { useEffect } from "react";
 import { useTitle } from "../contexts/TitleContext";
+
 
 export default function ClientPage() {
   const { setShortTitle } = useTitle();

@@ -7,9 +7,6 @@ import { useTitle } from "../contexts/TitleContext";
 
 export default function ClientPage() {
   const { setShortTitle } = useTitle();
-  useEffect(() => {
-    setShortTitle("Zvika Ben-Haim — Homepage");
-  }, [setShortTitle]);
   return (
     <>
       <p>Welcome to Zvika's homepage!</p>

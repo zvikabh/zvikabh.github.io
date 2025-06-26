@@ -7,6 +7,7 @@ import PublicationList from "../../components/PublicationList/list";
 import styles from "../page.module.scss";
 
 const CONFERENCE_PUBLICATIONS = [
+
   {
     authors: 'U. Dalal, M. Segal, Z. Ben-Haim, D. Lahav, and O. Nevo',
     title: (<>Leveraging LLM Inconsistency to Boost Pass@<i>k</i> Performance</>),

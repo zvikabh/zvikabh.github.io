@@ -7,6 +7,7 @@ import PublicationList from "../../components/PublicationList/list";
 import styles from "../page.module.scss";
 
 const CONFERENCE_PUBLICATIONS = [
+
   {
     authors: 'N. Giladi, S. Nevo, Z. Ben-Haim, Y. Matias, and D. Soudry',
     title: 'Physics-aware downsampling with deep learning for scalable flood modeling',

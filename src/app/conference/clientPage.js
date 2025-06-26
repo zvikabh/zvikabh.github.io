@@ -8,6 +8,11 @@ import styles from "../page.module.scss";
 
 const CONFERENCE_PUBLICATIONS = [
   {
+    authors: 'U. Dalal, M. Segal, Z. Ben-Haim, D. Lahav, and O. Nevo',
+    title: (<>Leveraging LLM Inconsistency to Boost Pass@<i>k</i> Performance</>),
+    link: 'https://arxiv.org/abs/2505.12938',
+  },
+  {
     authors: 'N. Giladi, S. Nevo, Z. Ben-Haim, Y. Matias, and D. Soudry',
     title: 'Physics-aware downsampling with deep learning for scalable flood modeling',
     bibinfo: (<><a href="https://events.ecmwf.int/event/294/">ECMWF 2022 Machine Learning Workshop</a></>),

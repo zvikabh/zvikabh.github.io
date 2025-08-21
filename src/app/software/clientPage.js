@@ -145,6 +145,12 @@ const GAME_SOLVERS = [
 
 const SILLY_STUFF = [
   {
+    title: 'Boiling point simulation',
+    link: '/boilingpoint',
+    icon: '/boilingpoint.png',
+    bibinfo: (<>Simulation showing the phase transition of molecules when the temperature is varied around the boiling point.</>)
+  },
+  {
     title: (<>Pascal&rsquo;s triangle mod <i>k</i></>),
     link: '/pascalmod',
     icon: '/pascal.png',

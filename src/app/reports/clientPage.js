@@ -74,6 +74,12 @@ const PROJECTS = [
 const SHORT_SUMMARIES = [
   {
     authors: null,
+    title: "A musical psychoacoustic demonstration",
+    bibinfo: 'An interesting and less-known psychoacoustic phenomenon, with demonstrations',
+    link: 'unpublished/onset/index.html'
+  },
+  {
+    authors: null,
     title: "EPR and Bell's inequality",
     bibinfo: 'A summary of some strange properties of quantum mechanics',
     link: 'https://colab.research.google.com/drive/1WZ_Q9Nn3qhtkm1Jau71typBuBUOZa9ck'

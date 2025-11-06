@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <title>A musical psychoacoustic demonstration</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R83Z59BP68"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R83Z59BP68');
+  </script>
+</head>
+<body>
+  <div id="main">
+    <h1>A musical psychoacoustic demonstration</h1>
+    <p>
+      Before you go on reading, please listen carefully to the following two 2-second
+      piano recordings, and see if you can put your finger on the difference between
+      the recordings.
+    </p>
+    <audio controls>
+      <source src="crop_1.wav" type="audio/wav">
+      Your browser does not support the audio tag.
+    </audio>
+    <audio controls>
+      <source src="crop_2.wav" type="audio/wav">
+      Your browser does not support the audio tag.
+    </audio>
+    <p>
+      Most people will hear a difference between the two, perhaps thinking that they were
+      recorded on different instruments, or that the notes are different.
+    </p>
+    <p>
+      To reveal the actual difference between the two, please scroll down...
+    </p>
+    <div class="filler">Scroll down for the answer...</div>
+    <p>
+      The two audio clips above are actually piano recordings from which the first 200
+      msec have been removed. Here are the original recordings, with those 200 msec
+      included. Can you tell what is the difference between the recordings now?
+    </p>
+    <audio controls>
+      <source src="orig_1.wav" type="audio/wav">
+      Your browser does not support the audio tag.
+    </audio>
+    <audio controls>
+      <source src="orig_2.wav" type="audio/wav">
+      Your browser does not support the audio tag.
+    </audio>
+    <p>
+      Browse further down to see the answer...
+    </p>
+    <div class="filler">Scroll down for the answer...</div>
+    <p>
+      The first recording is a piano playing a Middle C. The second recording is the
+      same piano playing a Middle C together with a High C (one octave above). Because
+      the base frequnecy and the harmonics of the High C all fall on harmonics of the
+      Middle C, it is not trivial to hear the High C.
+    </p>
+    <p>
+      This experiment demonstrates the importance of the note onset (the first few hundred
+      milliseconds) in humans&rsquo; ability to differentiate between notes. The onset
+      contains nonlinear effects which fade out over time, and these turn out to be
+      important in differentiating notes in a chord.
+    </p>
+    <div style="margin: 200px 0"></div>
+    <p>
+      Recorded and written by <a href="https://zvikabh.github.io">Zvika Ben-Haim</a>.
+      This is based on a similar experiment which I saw described in a musical acoustics
+      textbook long ago. Sadly I was unable to find this reference. If anyone is aware
+      of a published source describing this phenomenon, please let me know and I will
+      add a citation here.
+    </p>
+  </div>
+</body>
+</html>

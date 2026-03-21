@@ -34,6 +34,12 @@ const USEFUL_SOFTWARE = [
     GitHub.</>)
   },
   {
+    title: 'LL(1) Grammar Parser',
+    link: 'https://github.com/zvikabh/parser',
+    icon: '/software/icons/LL1.png',
+    bibinfo: (<>A pure-Python lexer and parser for LL(1) context-free grammars.</>)
+  },
+  {
     title: 'Blind Minimax Estimation',
     link: 'https://webee.technion.ac.il/Sites/People/YoninaEldar/Info/software/bme/index.php',
     icon: '/bme.gif',

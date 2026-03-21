@@ -43,16 +43,6 @@ const USEFUL_SOFTWARE = [
         The site and software were written by Guy Leibovitz and Asaf Elron, as their
         undergraduate project under my supervision.</>)
   },
-  {
-    title: 'Guitar Tuner',
-    link: '/software/Tuner/Tuner.exe',
-    icon: '/software/icons/guitar.jpg',
-    bibinfo: (<>A program to tune your guitar. Connect
-      a microphone and strum a single note on your guitar, and the program will
-      tell you if you’re sharp or flat. (Written as a birthday present for my
-      brother Rafi, who was learning to play.) Download <a target="_blank" href="/software/Tuner/Tuner.exe">executable</a> or <a target="_blank" href="/software/Tuner/source.zip">source</a> (MFC/Visual C++ 6). No
-      documentation, but quite straightforward to use.</>)
-  },
 ];
 
 const GAMES = [
@@ -165,6 +155,16 @@ const SILLY_STUFF = [
 ];
 
 const OLD_SOFTWARE = [
+  {
+    title: 'Guitar Tuner',
+    link: '/software/Tuner/Tuner.exe',
+    icon: '/software/icons/guitar.jpg',
+    bibinfo: (<>A program to tune your guitar. Connect
+      a microphone and strum a single note on your guitar, and the program will
+      tell you if you’re sharp or flat. (Written as a birthday present for my
+      brother Rafi, who was learning to play.) Download <a target="_blank" href="/software/Tuner/Tuner.exe">executable</a> or <a target="_blank" href="/software/Tuner/source.zip">source</a> (MFC/Visual C++ 6). No
+      documentation, but quite straightforward to use.</>)
+  },
   {
     title: 'WakeUp',
     link: 'software/WakeUp/WakeUp.zip',

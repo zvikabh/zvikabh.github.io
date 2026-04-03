@@ -26,12 +26,11 @@ const USEFUL_SOFTWARE = [
 	are supported. <a href="/software/ITM/index_heb.html">Hebrew version</a> also available.</>)
   },
   {
-    title: 'Guitar Tab Writer',
-    link: 'https://zvikabh.github.io/guitar-tab-writer/',
+    title: 'Guitar Tab Editor',
+    link: 'https://zvikabh.github.io/guitar-tab-editor/',
     icon: '/software/icons/guitar.jpg',
-    bibinfo: (<>A simple web-based editor for writing guitar tabs in the standard textual format.
-    Joint work with Naama Ben-Haim. See the <a href="https://github.com/zvikabh/guitar-tab-writer">source</a> on 
-    GitHub.</>)
+    bibinfo: (<>A web-based editor for reading, editing, and writing guitar tabs in the standard textual format.
+    See the <a href="https://github.com/zvikabh/guitar-tab-writer">source</a> on GitHub.</>)
   },
   {
     title: 'LL(1) Grammar Parser',

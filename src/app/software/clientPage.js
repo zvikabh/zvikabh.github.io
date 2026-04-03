@@ -28,9 +28,9 @@ const USEFUL_SOFTWARE = [
   {
     title: 'Guitar Tab Editor',
     link: 'https://zvikabh.github.io/guitar-tab-editor/',
-    icon: '/software/icons/guitar.jpg',
+    icon: 'https://zvikabh.github.io/guitar-tab-editor/static/icons/fingerpick.png',
     bibinfo: (<>A web-based editor for reading, editing, and writing guitar tabs in the standard textual format.
-    See the <a href="https://github.com/zvikabh/guitar-tab-writer">source</a> on GitHub.</>)
+    See the <a href="https://github.com/zvikabh/guitar-tab-editor">source</a> on GitHub.</>)
   },
   {
     title: 'LL(1) Grammar Parser',
